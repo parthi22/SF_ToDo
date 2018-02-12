@@ -1,0 +1,8 @@
+<!--
+ - Created by Parthiban.Sudhaman on 11-Feb-18.
+ -->
+
+<aura:event type="APPLICATION" description="todoAction">
+    <aura:attribute type="String" name="type"/>
+    <aura:attribute type="Object" name="payload"/>
+</aura:event>

@@ -1,0 +1,17 @@
+<!--
+ - Created by Parthiban.Sudhaman on 11-Feb-18.
+ -->
+
+<aura:component description="ToDoList">
+    <aura:attribute type="Object" name="state"/>
+    <div class="c-container">
+        <lightning:layout horizontalAlign="space" class="slds-grid_vertical">
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <c:ToDoItemNew />
+            </lightning:layoutItem>
+            <aura:iteration items="{!v.state}" var="todo">
+                <c:ToDoItem todo="{!todo}" />
+            </aura:iteration>
+        </lightning:layout>
+    </div>
+</aura:component>

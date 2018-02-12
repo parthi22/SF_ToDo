@@ -1,0 +1,24 @@
+<!--
+ - Created by Parthiban.Sudhaman on 11-Feb-18.
+ -->
+
+<aura:component description="ToDoItem">
+    <aura:attribute name="todo" type="Object" />
+    <aura:attribute name="IsCompleted" type="Boolean"/>
+    <aura:registerEvent name="dispatchAction" type="c:todoAction" />
+    <lightning:layoutItem flexibility="auto" padding="around-small">
+        <lightning:card >
+            <aura:set attribute="title">
+                <aura:if isTrue="{!v.todo.IsCompleted}">
+                    <lightning:formattedRichText value="{! '&lt;strike>' + v.todo.Item + '&lt;/strike>'}" />
+                    <aura:set attribute="else">
+                        <lightning:formattedRichText value="{!v.todo.Item}" />
+                    </aura:set>
+                </aura:if>
+            </aura:set>
+            <aura:set attribute="actions">
+                <lightning:button label="{!v.todo.IsCompleted ? 'Not done' : 'Done'}" onclick="{!c.toggleComplete}"/>
+            </aura:set>
+        </lightning:card>
+    </lightning:layoutItem>
+</aura:component>

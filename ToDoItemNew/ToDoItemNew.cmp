@@ -1,0 +1,17 @@
+<!--
+ - Created by Parthiban.Sudhaman on 11-Feb-18.
+ -->
+
+<aura:component description="ToDoItemNew">
+    <aura:attribute name="NewToDo" type="String"/>
+    <aura:registerEvent name="dispatchAction" type="c:todoAction" />
+    <lightning:card >
+        <aura:set attribute="title">
+            <lightning:input name="input" label="New ToDo" placeholder="What do you want to do?"
+                             variant="label-hidden" value="{!v.NewToDo}" />
+        </aura:set>
+        <aura:set attribute="actions">
+            <lightning:button label="Add" onclick="{!c.handleNewToDo}"/>
+        </aura:set>
+    </lightning:card>
+</aura:component>
